@@ -21,6 +21,28 @@
 	
 	]
 }, {
+	"_id": "ruanluyouhome",
+	"classify": "J1800",
+	"icon": "ti-medall-alt",
+	"sites": [{
+		"name": "hiStore",
+		"href": "https://zhyh.us.kg:666/",
+		"desc": "iStore首页",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	},{
+		"name": "hfileBrowser",
+		"href": "https://zhyh.us.kg:2082/",
+		"desc": "File Browser",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	},{
+		"name": "hlucky",
+		"href": "https://zhyh.us.kg:2086/",
+		"desc": "Lucky",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	}
+	
+	]
+}, {
 	"_id": "ruanjian",
 	"classify": "软件·社区",
 	"icon": "ti-download",
