@@ -73,7 +73,7 @@ $(function () {
     // 搜索功能
     function enableSearch(data) {
         $("#searchBox").on("input", function () {
-        var query = $(this).val().toLowerCase();
+            var query = $(this).val().toLowerCase();
             var suggestions = data.reduce((acc, category) => {
                 var matches = category.sites.filter(site => 
                     site.name.toLowerCase().includes(query) || 
@@ -90,13 +90,18 @@ $(function () {
             if (e.which == 13) { // Enter key pressed
                 var query = $(this).val().toLowerCase();
                 var match = data.reduce((acc, category) => {
-                    return acc.concat(category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query)));
+                    return acc.concat(category.sites.filter(site => 
+                        site.name.toLowerCase().includes(query) || 
+                        site.desc.toLowerCase().includes(query) || 
+                        site.href.toLowerCase().includes(query)
+                    ));
                 }, [])[0];
-                
+            
                 if (match) {
                     window.location.href = match.href;
                 }
             }
         });
     }
+
 });
