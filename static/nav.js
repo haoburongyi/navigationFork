@@ -86,7 +86,7 @@ $(function () {
             if (e.which == 13) { // Enter key pressed
                 var query = $(this).val().toLowerCase();
                 var match = data.reduce((acc, category) => {
-                    return acc.concat(category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query)));
+                    return acc.concat(category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query) || site.href.toLowerCase().includes(query)));
                 }, [])[0];
                 
                 if (match) {
