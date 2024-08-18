@@ -91,6 +91,10 @@ $(function () {
                 
                 if (match) {
                     window.location.href = match.href;
+                } else {
+                    // 如果没有匹配项，跳转到谷歌或百度
+                    var searchEngine = "https://www.google.com/search?q="; // 可以替换为 "https://www.baidu.com/s?wd="
+                    window.location.href = searchEngine + encodeURIComponent(query);
                 }
             }
         });
