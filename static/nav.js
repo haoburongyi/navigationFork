@@ -73,12 +73,16 @@ $(function () {
     // 搜索功能
     function enableSearch(data) {
         $("#searchBox").on("input", function () {
-            var query = $(this).val().toLowerCase();
+        var query = $(this).val().toLowerCase();
             var suggestions = data.reduce((acc, category) => {
-                var matches = category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query));
+                var matches = category.sites.filter(site => 
+                    site.name.toLowerCase().includes(query) || 
+                    site.desc.toLowerCase().includes(query) || 
+                    site.href.toLowerCase().includes(query)
+                );
                 return acc.concat(matches.map(site => `<a href="${site.href}" target="_blank">${site.name}</a>`));
             }, []);
-            
+        
             $("#suggestions").html(suggestions.join(""));
         });
 
