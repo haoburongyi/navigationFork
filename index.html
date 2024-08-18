@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,25 +18,22 @@
     <div class="container" id="container">
         <aside class="left-bar" id="leftBar">
             <div class="big-logo">
-                <img src = "static/logo.svg"/>
+                <img src="static/logo.svg"/>
             </div>
-            <div class = "ti-sec">
+            <div class="ti-sec">
                 <p>520jieshuo</p> 
             </div>
             <div class="title">
                 <p>个人导航</p>
             </div>
             <nav class="nav">
-
                 <ul class="nav-item" id="navItem">
-                </ul>
-	        <ul class="nav-item" id="navItem">
                     <li><a href="#">Link 1</a></li>
                     <li><a href="#">Link 2</a></li>
                     <!-- 添加更多链接 -->
                 </ul>
                 <div class="item comment">
-					<p class="icp"><a href="http://beian.miit.gov.cn/"></a></p>
+                    <p class="icp"><a href="http://beian.miit.gov.cn/"></a></p>
                 </div>
             </nav>
         </aside>
@@ -47,10 +43,10 @@
                 <div id="menu">
                     <a href="#"><i class="ti-menu-alt"></i></a>
                 </div>
-				<!-- 说明 -->
-				<div class = "about box">
-				    <p><i class="ti-pencil-alt"></i>本导航页仅供个人使用,纯静态无框架[html+css+js]</P>
-				</div>
+                <!-- 搜索框 -->
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="输入关键词搜索..." autofocus />
+                </div>
 
                 <footer class="footer">
                     <div class="copyright">
@@ -68,9 +64,47 @@
         </section>
         <!-- <script type="text/javascript" src="static/jquery.js"></script> -->
         <script src="static/jquery.js"></script>
-		<script src="static/nav.js"></script>
+        <script src="static/nav.js"></script>
 
-        </div>
+        <script>
+            // 站点数据从 nav.json 文件中获取
+            const sites = [
+                // 这里填入你的站点数据
+            ];
+
+            document.getElementById('searchInput').addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                const matchingSites = sites.filter(site => 
+                    site.name.toLowerCase().includes(query) || 
+                    site.href.toLowerCase().includes(query)
+                );
+
+                if (matchingSites.length === 1) {
+                    window.location.href = matchingSites[0].href;
+                } else if (matchingSites.length > 1) {
+                    // 展示下拉框或其他方式列出匹配结果
+                    // ...
+                }
+            });
+
+            document.getElementById('searchInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    const query = this.value.toLowerCase();
+                    const matchingSites = sites.filter(site => 
+                        site.name.toLowerCase().includes(query) || 
+                        site.href.toLowerCase().includes(query)
+                    );
+
+                    if (matchingSites.length === 1) {
+                        window.location.href = matchingSites[0].href;
+                    } else if (matchingSites.length > 1) {
+                        // 展示下拉框或其他方式列出匹配结果
+                        // ...
+                    }
+                }
+            });
+        </script>
+    </div>
 </body>
 
 </html>
