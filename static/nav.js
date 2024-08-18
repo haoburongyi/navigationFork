@@ -75,14 +75,10 @@ $(function () {
         $("#searchBox").on("input", function () {
             var query = $(this).val().toLowerCase();
             var suggestions = data.reduce((acc, category) => {
-                var matches = category.sites.filter(site => 
-                    site.name.toLowerCase().includes(query) || 
-                    site.desc.toLowerCase().includes(query) || 
-                    site.href.toLowerCase().includes(query)
-                );
-                return acc.concat(matches.map(site => `<a href="${site.href}" target="_blank">${site.name}</a>`));
+                var matches = category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query));
+                return acc.concat(matches.map(site => <a href="${site.href}" target="_blank">${site.name}</a>));
             }, []);
-        
+            
             $("#suggestions").html(suggestions.join(""));
         });
 
@@ -90,18 +86,13 @@ $(function () {
             if (e.which == 13) { // Enter key pressed
                 var query = $(this).val().toLowerCase();
                 var match = data.reduce((acc, category) => {
-                    return acc.concat(category.sites.filter(site => 
-                        site.name.toLowerCase().includes(query) || 
-                        site.desc.toLowerCase().includes(query) || 
-                        site.href.toLowerCase().includes(query)
-                    ));
+                    return acc.concat(category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query)));
                 }, [])[0];
-            
+                
                 if (match) {
                     window.location.href = match.href;
                 }
             }
         });
     }
-
 });
