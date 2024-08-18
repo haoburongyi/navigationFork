@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +8,7 @@
     <meta name="description" content="zh navigation"/>
     <link rel="shortcut icon" href="static/logo.svg" type="image/x-icon">
     <meta name="keywords" content="zh navigation" />
+	<!-- <meta http-equiv='Content-Security-Policy' content='block-all-mixed-content'>  -->
     <title>zh navigation</title>
     <link rel="shortcut icon" href="favcion.ico" />
     <link rel="stylesheet" href="static/style.css">
@@ -16,7 +18,28 @@
 <body>
     <div class="container" id="container">
         <aside class="left-bar" id="leftBar">
-            <!-- Left sidebar content -->
+            <div class="big-logo">
+                <img src = "static/logo.svg"/>
+            </div>
+            <div class = "ti-sec">
+                <p>520jieshuo</p> 
+            </div>
+            <div class="title">
+                <p>个人导航</p>
+            </div>
+            <nav class="nav">
+
+                <ul class="nav-item" id="navItem">
+                </ul>
+	        <ul class="nav-item" id="navItem">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <!-- 添加更多链接 -->
+                </ul>
+                <div class="item comment">
+					<p class="icp"><a href="http://beian.miit.gov.cn/"></a></p>
+                </div>
+            </nav>
         </aside>
         <section class="main">
             <div id="mainContent">
@@ -24,68 +47,31 @@
                 <div id="menu">
                     <a href="#"><i class="ti-menu-alt"></i></a>
                 </div>
-                <!-- 搜索框替代说明 -->
-                <div class="about box">
+				<!-- 说明 -->
+				<div class="about box">
                     <input type="text" id="searchBox" placeholder="搜索网站..." autofocus>
                     <div id="suggestions" class="suggestions"></div>
                 </div>
 
-                <!-- Footer and other content -->
-
                 <footer class="footer">
-                    <!-- Footer content -->
+                    <div class="copyright">
+                        <div>
+                            <p>CopyRight from <a target="_blank" href="https://github.com/geekape/geek-navigation">geekape</a> by abc ©  2020</p>                        
+                        </div>
+                    </div>
                 </footer>
+                <div id="fixedBar">
+                    <svg class="Zi Zi--BackToTop" title="回到顶部" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
+                    </svg>
+                </div>
             </div>
         </section>
-
+        <!-- <script type="text/javascript" src="static/jquery.js"></script> -->
         <script src="static/jquery.js"></script>
-        <script>
-            // 读取JSON数据并初始化
-            let sites = [];
-            $(document).ready(function() {
-                $.getJSON("static/nav.json", function(data) {
-                    sites = data.sites;
-                });
+		<script src="static/nav.js"></script>
 
-                // 监听输入框键盘事件
-                $('#searchBox').on('input', function() {
-                    const query = $(this).val().toLowerCase();
-                    const matches = sites.filter(site => 
-                        site.name.toLowerCase().includes(query) || 
-                        site.href.toLowerCase().includes(query)
-                    );
-                    showSuggestions(matches);
-                });
-
-                $('#searchBox').on('keydown', function(e) {
-                    if (e.key === 'Enter') {
-                        const query = $(this).val().toLowerCase();
-                        const matches = sites.filter(site => 
-                            site.name.toLowerCase().includes(query) || 
-                            site.href.toLowerCase().includes(query)
-                        );
-                        if (matches.length === 1) {
-                            window.location.href = matches[0].href;
-                        } else if (matches.length > 1) {
-                            // 如果有多个匹配项，显示下拉框
-                            showSuggestions(matches);
-                        }
-                    }
-                });
-            });
-
-            // 显示下拉建议
-            function showSuggestions(matches) {
-                const suggestions = $('#suggestions');
-                suggestions.empty();
-                if (matches.length > 0) {
-                    matches.forEach(match => {
-                        suggestions.append(`<div class="suggestion-item">${match.name} - ${match.href}</div>`);
-                    });
-                }
-            }
-        </script>
-    </div>
+        </div>
 </body>
 
 </html>
