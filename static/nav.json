@@ -1,4 +1,26 @@
 [{
+	"_id": "d2550",
+	"classify": "d2550",
+	"icon": "ti-medall-alt",
+	"sites": [{
+		"name": "iStore",
+		"href": "https://zhhh.us.kg:666/",
+		"desc": "iStore首页",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	},{
+		"name": "fileBrowser",
+		"href": "https://zhhh.us.kg:2082/",
+		"desc": "File Browser",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	},{
+		"name": "lucky",
+		"href": "https://zhhh.us.kg:2086/",
+		"desc": "Lucky",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	}
+	
+	]
+}, {
 	"_id": "ruanjian",
 	"classify": "软件·社区",
 	"icon": "ti-download",
