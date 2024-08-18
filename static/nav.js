@@ -76,7 +76,7 @@ $(function () {
             var query = $(this).val().toLowerCase();
             var suggestions = data.reduce((acc, category) => {
                 var matches = category.sites.filter(site => site.name.toLowerCase().includes(query) || site.desc.toLowerCase().includes(query));
-                return acc.concat(matches.map(site => <a href="${site.href}" target="_blank">${site.name}</a>));
+                return acc.concat(matches.map(site => `<a href="${site.href}" target="_blank">${site.name}</a>`));
             }, []);
             
             $("#suggestions").html(suggestions.join(""));
