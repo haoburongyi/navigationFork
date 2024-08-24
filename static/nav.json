@@ -53,9 +53,9 @@
 		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
 	}, {
 		"name": "gpt token",
-		"href": "https://www.moerats.com/",
+		"href": "https://chatgpt.com/api/auth/session",
 		"desc": "gpt token",
-		"logo": "https://chatgpt.com/api/auth/session"
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
 	}, {
 		"name": "gpt官网",
 		"href": "https://chatgpt.com/",
