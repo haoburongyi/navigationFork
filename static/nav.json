@@ -56,5 +56,15 @@
 		"href": "https://www.moerats.com/",
 		"desc": "gpt token",
 		"logo": "https://chatgpt.com/api/auth/session"
+	}, {
+		"name": "gpt官网",
+		"href": "https://chatgpt.com/",
+		"desc": "官方GPT",
+		"logo": "https://chatgpt.com/api/auth/session"
+	}, {
+		"name": "deepseek",
+		"href": "https://chat.deepseek.com",
+		"desc": "deepseek",
+		"logo": "https://chatgpt.com/api/auth/session"
 	}]
 }]
