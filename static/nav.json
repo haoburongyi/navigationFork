@@ -67,4 +67,19 @@
 		"desc": "deepseek",
 		"logo": "https://chatgpt.com/api/auth/session"
 	}]
+}, {
+	"_id": "collection",
+	"classify": "收藏网站",
+	"icon": "ti-medall-alt",
+	"sites": [{
+		"name": "uskg",
+		"href": "https://register.us.kg/panel/main/",
+		"desc": "域名 google 登录",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	}, {
+		"name": "free hr",
+		"href": "https://chatgpt.com/api/auth/session",
+		"desc": "gpt token",
+		"logo": "https://www.moerats.com/usr/picture/favicon.ico"
+	}]
 }]
